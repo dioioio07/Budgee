@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budgee - Taking Control of Your Finances</title>
+  <meta name="description" content="Budgee: The minimal financial tracking template for Gen Z.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* COLOR PALETTE */
+    :root {
+      --soft-yellow: #f4efbf;
+      --soft-cream: #eadbc7;
+      --warm-brown: #b6906a;
+      --dark-brown: #745638;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--soft-yellow);
+      color: var(--dark-brown);
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      padding: 60px;
+    }
+
+    /* SECTION 1 */
+    .hero {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background: var(--soft-yellow);
+      padding: 40px 20px 80px;
+    }
+
+    .hero-top {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-top img {
+      width: 100%;
+      max-width: 1100px;
+      border-radius: 24px;
+      object-fit: cover;
+      border: 4px solid var(--warm-brown);
+      box-shadow: 0 10px 30px rgba(116, 86, 56, 0.15);
+      display: block;
+    }
+
+    .hero-bottom {
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-bottom h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--dark-brown);
+    }
+
+    .hero-bottom p {
+      font-size: 1.5rem;
+      line-height: 1.8;
+      color: var(--dark-brown);
+    }
+
+    /* SECTION 2 */
+    .overview {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background: var(--soft-cream);
+    }
+
+    .overview-left {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .overview-left img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 24px;
+      border: 4px solid var(--warm-brown);
+      box-shadow: 0 10px 30px rgba(116, 86, 56, 0.15);
+      display: block;
+    }
+
+    .overview-right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+    }
+
+    .overview-right h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--dark-brown);
+    }
+
+    .overview-right p {
+      font-size: 1.4rem;
+      line-height: 2;
+      color: var(--dark-brown);
+      white-space: pre-line;
+    }
+
+    /* SECTION 3 */
+    .contact {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: var(--warm-brown);
+      color: var(--soft-yellow);
+    }
+
+    .contact h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--soft-yellow);
+    }
+
+    .contact p.subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 50px;
+      color: var(--soft-cream);
+    }
+
+    .contact-grid {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-card {
+      background: rgba(244, 239, 191, 0.15);
+      padding: 30px;
+      border-radius: 24px;
+      width: 250px;
+      border: 2px solid var(--soft-cream);
+    }
+
+    .contact-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--soft-yellow);
+    }
+
+    .contact-card p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--soft-cream);
+    }
+
+    /* SOCIAL LINKS */
+    .social-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      font-size: 1.2rem;
+      color: var(--soft-yellow);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--soft-cream);
+      transform: translateY(-3px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      section {
+        padding: 40px 20px;
+      }
+
+      .overview-left,
+      .overview-right {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-bottom h1 {
+        font-size: 3rem;
+      }
+
+      .hero-bottom p,
+      .overview-right p {
+        font-size: 1.2rem;
+      }
+
+      .overview-right h2 {
+        font-size: 2rem;
+      }
+
+      .social-links {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SECTION 1 -->
+  <section class="hero">
+    
+    <div class="hero-top">
+      <!-- GANTI dashboard1.png jika file kamu png -->
+      <img src="assets/dashboard1.png" alt="Budgee Dashboard">
+    </div>
+
+    <div class="hero-bottom">
+      <h1>Budgee</h1>
+      <p>
+        Budgee is the ultimate financial tracking template designed for those who want simplicity, clarity, and control, without the clutter.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="overview">
+    <div class="overview-left">
+      <img src="assets/overview1.png" alt="Product Overview">
+    </div>
+
+    <div class="overview-right">
+      <h2>Product Overview</h2>
+      <p>Everything you need, in one view.
+✨ Minimalist aesthetic, zero distractions
+📊 Beautifully clear budget visualizations
+💸 Effortless spending and savings tracking</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="contact">
+    <h2>Get in Touch</h2>
+    <p class="subtitle">
+      Have questions? Reach out to our dedicated representatives.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>👨‍💼 Fatan</h3>
+        <p>Customer Service</p>
+        <p>085817584054</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>👩‍💼 Kartika</h3>
+        <p>Customer Service</p>
+        <p>081297311565</p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <a href="mailto:yourfinancebudgee@gmail.com">
+        📧 yourfinancebudgee@gmail.com
+      </a>
+
+      <a href="https://instagram.com/yourfinancebudgee" target="_blank">
+        📸 @yourfinancebudgee
+      </a>
+
+      <a href="http://lynk.id/budgee/wzmo0dxkq6eo" target="_blank">
+        🐝 Buy Our Product
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>
